@@ -14,4 +14,11 @@ object Settings {
     version      := s"0.2.0-spark-${jtSparkVersion.split("\\.").take(2).mkString(".")}-alpha"
   )
 
+  val repoUsername                        = "jobtech-dev"
+  val repoPass: String                    = sys.env.getOrElse("GITHUB_AUTH_TOKEN", "")
+  val githubPackageRepositoryHost        = "maven.pkg.github.com"
+  val githubPackageRepositoryUrl: String = "https://maven.pkg.github.com/jobtech-dev/graphen_j"
+  val githubPackageRealm                 = "GitHub Package Registry"
+  val githubPackageId                    = "maven.pkg.github.com"
+
 }

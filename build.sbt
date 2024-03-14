@@ -28,6 +28,14 @@ lazy val root = (project in file("."))
   .settings(libraryDependencies ++= Dependencies.test_deps)
 
 publishMavenStyle := true
+publishTo := Some("GitHub Packages" at Settings.githubPackageRepositoryUrl)
+
+credentials += Credentials(
+  Settings.githubPackageRealm,
+  Settings.githubPackageRepositoryHost,
+  Settings.repoUsername,
+  Settings.repoPass
+)
 
 enablePlugins(JavaAppPackaging)
 
